@@ -7,7 +7,7 @@ INSERT INTO resorts (name, atoll, island, star_rating, price_range, description,
  '["no shoes no news barefoot luxury","14 dining destinations including Flying Sauces zipline dining","The Den - largest kids club in South Asia with zipline","observatory and outdoor cinema","So Cool with 60+ ice cream flavors"]',
  'seaplane', 40, 0, 1, 1, 0, 1, 1, 1, 1,
  'https://soneva.com/resorts/soneva-fushi',
- 'https://image.hummingbird.travel/disk1/public/hotels/96/b418d9de-920d-4445-9bf7-170f2af814c1.jpg'),
+ 'https://image.hummingbird.travel/disk1/public/hotels/363/038dda21-e547-40a1-84c4-2bb06c0d2d25.jpg'),
 
 -- 2. Gili Lankanfushi
 ('Gili Lankanfushi', 'North Male Atoll', 'Lankanfushi', 5, 'ultra-luxury',
@@ -15,7 +15,7 @@ INSERT INTO resorts (name, atoll, island, star_rating, price_range, description,
  '["Mr. or Ms. Friday 24-hour personal butler","The Private Reserve 1700 sqm overwater suite","excellent house reef for snorkeling","Kashiveli beach dining with local ingredients","By The Sea Japanese-fusion restaurant"]',
  'speedboat', 20, 0, 1, 1, 0, 0, 1, 1, 0,
  'https://www.gili-lankanfushi.com',
- ''),
+ 'https://image.hummingbird.travel/disk1/public/hotels/27/793627e4-7113-46cb-b6ac-a8318409e470.jpg'),
 
 -- 3. Waldorf Astoria Maldives Ithaafushi
 ('Waldorf Astoria Maldives Ithaafushi', 'South Male Atoll', 'Ithaafushi', 5, 'ultra-luxury',
@@ -24,6 +24,7 @@ INSERT INTO resorts (name, atoll, island, star_rating, price_range, description,
  'speedboat', 45, 0, 1, 1, 0, 1, 1, 1, 1,
  'https://hummingbird.travel/property/waldorf-astoria-maldives-ithaafushi',
  'https://image.hummingbird.travel/disk1/public/hotels/96/b418d9de-920d-4445-9bf7-170f2af814c1.jpg'),
+-- Note: Waldorf is hotel ID 96 on hummingbird.travel
 
 -- 4. One & Only Reethi Rah
 ('One & Only Reethi Rah', 'North Male Atoll', 'Reethi Rah', 5, 'ultra-luxury',
@@ -111,7 +112,7 @@ INSERT INTO resorts (name, atoll, island, star_rating, price_range, description,
  '["only 25-minute speedboat from Male airport","overwater spa and wine cellar","good house reef for snorkeling","chic water villas with pool options","live music and cocktail party events"]',
  'speedboat', 25, 0, 1, 1, 0, 0, 1, 1, 0,
  'https://hummingbird.travel/property/velassaru-maldives',
- ''),
+ 'https://image.hummingbird.travel/disk1/public/hotels/42/8e50334f-c55a-48cf-962f-d75de91a1cf6.jpg'),
 
 -- 15. JOALI Maldives
 ('JOALI Maldives', 'Raa Atoll', 'Muravandhoo', 5, 'ultra-luxury',
@@ -151,7 +152,7 @@ INSERT INTO resorts (name, atoll, island, star_rating, price_range, description,
  '["3 restaurants and 2 bars","Cultural Kids Club for children","fully equipped diving centre","lagoon overwater villas with slide option","Platinum and Premium All Inclusive plans"]',
  'seaplane', 30, 1, 1, 1, 0, 1, 1, 1, 1,
  'https://hummingbird.travel/property/cocoon-maldives',
- ''),
+ 'https://image.hummingbird.travel/disk1/public/hotels/37/00794c9f-e78f-4949-91e7-b19179d4b34f.jpg'),
 
 -- 20. Bandos Maldives
 ('Bandos Maldives', 'North Male Atoll', 'Bandos', 4, 'mid',
@@ -159,7 +160,7 @@ INSERT INTO resorts (name, atoll, island, star_rating, price_range, description,
  '["exceptional house reef for snorkeling and diving","Kokko kids club for children","Clubhouse sports complex with flood-lit courts","Sunset Water Villa with private infinity pool","4 restaurants and 2 bars"]',
  'speedboat', 25, 1, 0, 1, 0, 1, 1, 0, 1,
  'https://hummingbird.travel/property/bandos-maldives',
- ''),
+ 'https://image.hummingbird.travel/disk1/public/hotels/84/dc1b0f57-a983-4e51-8473-dad6fe0b66e7.png'),
 
 -- 21. Meeru Maldives Resort Island
 ('Meeru Maldives Resort Island', 'North Male Atoll', 'Meerufenfushi', 4, 'mid',
@@ -183,7 +184,7 @@ INSERT INTO resorts (name, atoll, island, star_rating, price_range, description,
  '["all-overwater villa resort with glass-floor panels","vibrant house reef for snorkeling","private butler service included","World Leading Water Villa award winner","premium all-inclusive dining"]',
  'speedboat', 15, 1, 1, 0, 0, 0, 1, 1, 0,
  'https://hummingbird.travel/property/adaaran-prestige-vadoo',
- ''),
+ 'https://image.hummingbird.travel/disk1/public/hotels/104/ca8e7875-c20e-49f7-8d2e-d081172a6947.jpg'),
 
 -- 24. Emerald Maldives Resort & Spa
 ('Emerald Maldives Resort & Spa', 'Raa Atoll', 'Fasmendhoo', 5, 'luxury',
@@ -191,7 +192,7 @@ INSERT INTO resorts (name, atoll, island, star_rating, price_range, description,
  '["deluxe all-inclusive with diverse dining venues","60 beach villas and 60 overwater villas","indoor and outdoor children playground","accessible house reef with crystal-clear lagoon","wine cellar and padel court"]',
  'seaplane', 40, 1, 1, 1, 0, 1, 1, 1, 1,
  'https://hummingbird.travel/property/emerald-maldives-resort-spa',
- ''),
+ 'https://image.hummingbird.travel/disk1/public/hotels/95/6a1bdec5-f715-4b6b-a903-649f825a806a.jpg'),
 
 -- 25. The St. Regis Maldives Vommuli Resort
 ('The St. Regis Maldives Vommuli Resort', 'Dhaalu Atoll', 'Vommuli', 5, 'ultra-luxury',
@@ -207,7 +208,7 @@ INSERT INTO resorts (name, atoll, island, star_rating, price_range, description,
  '["private spa island with traditional boat access","Le 1947 signature gourmet restaurant","kids club and teens club","yacht access and extensive water sports","golf tennis and padel courts"]',
  'seaplane', 45, 0, 1, 1, 0, 1, 1, 1, 1,
  'https://hummingbird.travel/property/cheval-blanc-randheli',
- ''),
+ 'https://image.hummingbird.travel/disk1/public/hotels/52/119c521d-4ea0-4437-abd3-46e87f7fb51f.jpg'),
 
 -- 27. Sun Island Resort & Spa (not on hummingbird.travel — manually curated)
 ('Sun Island Resort & Spa', 'South Ari Atoll', 'Nalaguraidhoo', 4, 'budget',
