@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --color-ocean-900: #023E8A;
+  --color-ocean-700: #0077B6;
+  --color-ocean-500: #00B4D8;
+  --color-ocean-300: #90E0EF;
+  --color-ocean-100: #CAF0F8;
+  --color-sand-50: #FEFCF3;
+  --color-sand-100: #F8F4E8;
+  --color-coral-500: #FF6B6B;
+  --color-coral-600: #E55A5A;
+}
+
+body {
+  font-family: var(--font-sans);
+  margin: 0;
+}

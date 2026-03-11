@@ -1,0 +1,11 @@
+name = "mymaldives-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+[ai]
+binding = "AI"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mymaldives-db"
+database_id = "f3667fb9-6425-4df3-b005-3bb07355e45b"
