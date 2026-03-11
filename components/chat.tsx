@@ -1,14 +1,23 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { useChat } from "@ai-sdk/react";
 import { useRouter } from "next/navigation";
-import { useAuth, SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { useAuth, SignedOut, SignInButton } from "@clerk/nextjs";
 import type { UIMessage } from "ai";
 import ChatMessages from "./chat-messages";
 import MultimodalInput from "./multimodal-input";
-import BookingForm from "./booking-form";
 import { SidebarToggle } from "./sidebar-toggle";
+import { useSidebar } from "./sidebar-provider";
+
+function PlusIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19" />
+      <line x1="5" y1="12" x2="19" y2="12" />
+    </svg>
+  );
+}
 
 interface Props {
   id: string;
@@ -18,8 +27,8 @@ interface Props {
 export function Chat({ id, initialMessages = [] }: Props) {
   const router = useRouter();
   const { isSignedIn } = useAuth();
+  const { isOpen } = useSidebar();
   const hasNavigated = useRef(false);
-  const [showBooking, setShowBooking] = useState(false);
 
   const {
     messages,
@@ -51,15 +60,16 @@ export function Chat({ id, initialMessages = [] }: Props) {
       {/* Header */}
       <header className="sticky top-0 z-10 flex items-center gap-2 bg-background px-2 py-1.5">
         <SidebarToggle />
+        {!isOpen && (
+          <button
+            onClick={() => { router.push("/chat"); router.refresh(); }}
+            className="flex size-8 items-center justify-center rounded-lg border border-border text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+            title="New chat"
+          >
+            <PlusIcon />
+          </button>
+        )}
         <div className="ml-auto flex items-center gap-2">
-          <SignedIn>
-            <button
-              onClick={() => setShowBooking(true)}
-              className="rounded-lg border border-border bg-background px-3 py-1 text-xs font-medium text-foreground hover:bg-muted transition-colors"
-            >
-              Book a Resort
-            </button>
-          </SignedIn>
           <SignedOut>
             <SignInButton mode="redirect">
               <button className="rounded-lg border border-border bg-background px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-muted transition-colors cursor-pointer">
@@ -91,16 +101,6 @@ export function Chat({ id, initialMessages = [] }: Props) {
           stop={stop}
         />
       </div>
-
-      {/* Booking Modal */}
-      {showBooking && (
-        <BookingForm
-          onClose={() => setShowBooking(false)}
-          onSuccess={(msg) => {
-            append({ role: "user", content: msg });
-          }}
-        />
-      )}
     </div>
   );
 }

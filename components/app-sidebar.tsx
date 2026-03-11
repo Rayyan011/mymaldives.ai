@@ -27,11 +27,16 @@ export function AppSidebar() {
         />
       )}
 
+      {/* Desktop spacer — pushes main content */}
+      <div
+        className="hidden md:block shrink-0 transition-[width] duration-200 ease-linear"
+        style={{ width: isOpen ? "256px" : "0px" }}
+      />
+
+      {/* Sidebar panel */}
       <aside
-        className={`flex flex-col bg-muted/30 transition-all duration-200
-          fixed inset-y-0 left-0 z-50 w-72 border-r border-border shadow-xl
-          md:relative md:z-auto md:w-64 md:shadow-none md:shrink-0
-          ${isOpen ? "translate-x-0" : "max-md:-translate-x-full md:w-0 md:overflow-hidden md:border-0"}`}
+        className={`fixed inset-y-0 left-0 z-50 flex w-72 md:w-64 flex-col bg-muted/30 border-r border-border transition-[transform,left] duration-200 ease-linear
+          ${isOpen ? "translate-x-0 md:translate-x-0 md:left-0" : "-translate-x-full md:translate-x-0 md:left-[-256px]"}`}
       >
         {/* Header */}
         <div className="flex items-center justify-between gap-2 px-3 py-2.5">
