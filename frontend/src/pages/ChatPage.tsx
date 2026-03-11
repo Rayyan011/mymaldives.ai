@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useAuth, UserButton } from '@clerk/react';
+import { Show, SignInButton, UserButton } from '@clerk/react';
 import { Link } from 'react-router-dom';
 import ChatWindow from '../components/ChatWindow';
 import MessageInput from '../components/MessageInput';
@@ -8,7 +8,6 @@ import { useChat } from '../hooks/useChat';
 
 export default function ChatPage() {
   const { messages, sendMessage, isLoading } = useChat();
-  const { isSignedIn } = useAuth();
   const [showBooking, setShowBooking] = useState(false);
 
   return (
@@ -19,24 +18,22 @@ export default function ChatPage() {
           MyMaldives.ai
         </Link>
         <div className="flex items-center gap-3">
-          {isSignedIn ? (
-            <>
-              <button
-                onClick={() => setShowBooking(true)}
-                className="text-xs px-3 py-1.5 rounded-full bg-coral-500 text-white hover:bg-coral-600 transition-colors"
-              >
-                Book a Resort
-              </button>
-              <UserButton />
-            </>
-          ) : (
-            <Link
-              to="/sign-in"
-              className="text-xs text-ocean-700 hover:text-ocean-900 font-medium"
+          <Show when="signed-in">
+            <button
+              onClick={() => setShowBooking(true)}
+              className="text-xs px-3 py-1.5 rounded-full bg-coral-500 text-white hover:bg-coral-600 transition-colors"
             >
-              Sign in for personalized recs
-            </Link>
-          )}
+              Book a Resort
+            </button>
+            <UserButton />
+          </Show>
+          <Show when="signed-out">
+            <SignInButton mode="redirect">
+              <button className="text-xs text-ocean-700 hover:text-ocean-900 font-medium cursor-pointer">
+                Sign in for personalized recs
+              </button>
+            </SignInButton>
+          </Show>
         </div>
       </header>
 

@@ -1,23 +1,20 @@
 import { Link } from 'react-router-dom';
-import { useAuth } from '@clerk/react';
+import { Show, SignInButton, SignUpButton } from '@clerk/react';
 
 export default function LandingPage() {
-  const { isSignedIn } = useAuth();
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-ocean-900 via-ocean-700 to-ocean-500 text-white">
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
         <span className="text-xl font-bold">MyMaldives.ai</span>
         <div className="flex gap-3">
-          {!isSignedIn && (
-            <Link
-              to="/sign-in"
-              className="text-sm text-ocean-100 hover:text-white transition-colors"
-            >
-              Sign In
-            </Link>
-          )}
+          <Show when="signed-out">
+            <SignInButton mode="redirect">
+              <button className="text-sm text-ocean-100 hover:text-white transition-colors cursor-pointer">
+                Sign In
+              </button>
+            </SignInButton>
+          </Show>
           <Link
             to="/chat"
             className="text-sm bg-white/20 hover:bg-white/30 px-4 py-1.5 rounded-full transition-colors"
@@ -45,21 +42,21 @@ export default function LandingPage() {
           >
             Start Chatting
           </Link>
-          {isSignedIn ? (
+          <Show when="signed-in">
             <Link
               to="/chat"
               className="border border-white/30 px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
             >
               Continue Your Conversation
             </Link>
-          ) : (
-            <Link
-              to="/sign-up"
-              className="border border-white/30 px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
-            >
-              Sign Up for Personalized Recs
-            </Link>
-          )}
+          </Show>
+          <Show when="signed-out">
+            <SignUpButton mode="redirect">
+              <button className="border border-white/30 px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors cursor-pointer">
+                Sign Up for Personalized Recs
+              </button>
+            </SignUpButton>
+          </Show>
         </div>
       </main>
 
